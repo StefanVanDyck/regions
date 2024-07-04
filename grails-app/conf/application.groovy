@@ -2,7 +2,7 @@ import grails.util.Metadata
 
 grails.project.groupId = 'au.org.ala'
 
-grails.serverURL = 'http://dev.biodiversisteitsportaal.dev.svdev.be'
+grails.serverURL = 'http://dev.biodiversiteitsportaal.dev.svdev.be'
 
 ENV_NAME = "EXPERT_CONFIG"
 appName = 'regions'
@@ -80,23 +80,23 @@ redirectDownloads = false
 // Application defaults
 //
 ala.baseURL = 'https://biodiversisteitsportaal.dev.svdev.be'
-bie.baseURL = 'https://species.biodiversisteitsportaal.dev.svdev.be'
-biocache.baseURL = 'https://records.biodiversisteitsportaal.dev.svdev.be'
-spatial.baseURL = 'https://spatial.biodiversisteitsportaal.dev.svdev.be'
-images.baseURL = 'https://images.biodiversisteitsportaal.dev.svdev.be'
-layersService.baseURL = 'https://spatial.biodiversisteitsportaal.dev.svdev.be/ws'
-alerts.baseURL = 'https://alerts.biodiversisteitsportaal.dev.svdev.be'
-bieService.baseURL = 'https://species-ws.biodiversisteitsportaal.dev.svdev.be/ws'
-geoserver.baseURL = 'https://spatial.biodiversisteitsportaal.dev.svdev.be/geoserver'
-biocacheService.baseURL = 'https://records-ws.biodiversisteitsportaal.dev.svdev.be/ws'
+bie.baseURL = 'https://species.biodiversiteitsportaal.dev.svdev.be'
+biocache.baseURL = 'https://records.biodiversiteitsportaal.dev.svdev.be'
+spatial.baseURL = 'https://spatial.biodiversiteitsportaal.dev.svdev.be'
+images.baseURL = 'https://images.biodiversiteitsportaal.dev.svdev.be'
+layersService.baseURL = 'https://spatial.biodiversiteitsportaal.dev.svdev.be/ws'
+alerts.baseURL = 'https://alerts.biodiversiteitsportaal.dev.svdev.be'
+bieService.baseURL = 'https://species-ws.biodiversiteitsportaal.dev.svdev.be/ws'
+geoserver.baseURL = 'https://spatial.biodiversiteitsportaal.dev.svdev.be/geoserver'
+biocacheService.baseURL = 'https://records-ws.biodiversiteitsportaal.dev.svdev.be/ws'
 
 skin.layout = 'ala'
 accordion.panel.maxHeight = ''
 map.height = ''
 map.bounds = '[]' // note this is a string
 
-//headerAndFooter.baseURL='https://www2.biodiversisteitsportaal.dev.svdev.be/commonui-bs3'
-headerAndFooter.baseURL = 'https://branding.biodiversisteitsportaal.dev.svdev.be'
+//headerAndFooter.baseURL='https://www2.biodiversiteitsportaal.dev.svdev.be/commonui-bs3'
+headerAndFooter.baseURL = 'https://branding.biodiversiteitsportaal.dev.svdev.be'
 
 biocache.filter = "&fq=rank:(species%20OR%20subspecies)&fq=-occurrence_status_s:absent&fq=geospatial_kosher:true&fq=occurrence_year:*"
 
@@ -134,7 +134,7 @@ grails.cache.config = {
 
 headerAndFooter.excludeApplicationJs = false
 orgNameLong = 'Atlas of Living Australia'
-breadcrumbParent = 'https://www.biodiversisteitsportaal.dev.svdev.be/explore-by-location/,Explore'
+breadcrumbParent = 'https://www.biodiversiteitsportaal.dev.svdev.be/explore-by-location/,Explore'
 
 //google.apikey=
 
