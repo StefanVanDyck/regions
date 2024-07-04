@@ -1,3 +1,4 @@
+//= require jquery/jquery-1.11.2.js
 //= require jquery/jquery-migrate-1.2.1.min.js
 //= require jquery-ui/jquery-ui-1.12.1
 //= require jquery-jsonp/jquery.jsonp-2.1.4.min
