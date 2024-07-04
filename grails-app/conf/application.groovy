@@ -90,7 +90,7 @@ bieService.baseURL = 'https://species-ws.biodiversisteitsportaal.dev.svdev.be/ws
 geoserver.baseURL = 'https://spatial.biodiversisteitsportaal.dev.svdev.be/geoserver'
 biocacheService.baseURL = 'https://records-ws.biodiversisteitsportaal.dev.svdev.be/ws'
 
-skin.layout = 'main'
+skin.layout = 'ala'
 accordion.panel.maxHeight = ''
 map.height = ''
 map.bounds = '[]' // note this is a string
@@ -132,7 +132,7 @@ grails.cache.config = {
     }
 }
 
-headerAndFooter.excludeApplicationJs = true
+headerAndFooter.excludeApplicationJs = false
 orgNameLong = 'Atlas of Living Australia'
 breadcrumbParent = 'https://www.biodiversisteitsportaal.dev.svdev.be/explore-by-location/,Explore'
 
