@@ -2,7 +2,7 @@ import grails.util.Metadata
 
 grails.project.groupId = 'au.org.ala'
 
-grails.serverURL = 'http://dev.ala.org.au:8080'
+grails.serverURL = 'http://dev.biodiversisteitsportaal.dev.svdev.be'
 
 ENV_NAME = "EXPERT_CONFIG"
 appName = 'regions'
@@ -79,24 +79,24 @@ redirectDownloads = false
 //
 // Application defaults
 //
-ala.baseURL = 'https://ala.org.au'
-bie.baseURL = 'https://bie.ala.org.au'
-biocache.baseURL = 'https://biocache.ala.org.au'
-spatial.baseURL = 'https://spatial.ala.org.au'
-images.baseURL = 'https://images.ala.org.au'
-layersService.baseURL = 'https://spatial.ala.org.au/ws'
-alerts.baseURL = 'https://alerts.ala.org.au'
-bieService.baseURL = 'https://bie-ws.ala.org.au/ws'
-geoserver.baseURL = 'https://spatial.ala.org.au/geoserver'
-biocacheService.baseURL = 'https://biocache-ws.ala.org.au/ws'
+ala.baseURL = 'https://biodiversisteitsportaal.dev.svdev.be'
+bie.baseURL = 'https://species.biodiversisteitsportaal.dev.svdev.be'
+biocache.baseURL = 'https://records.biodiversisteitsportaal.dev.svdev.be'
+spatial.baseURL = 'https://spatial.biodiversisteitsportaal.dev.svdev.be'
+images.baseURL = 'https://images.biodiversisteitsportaal.dev.svdev.be'
+layersService.baseURL = 'https://spatial.biodiversisteitsportaal.dev.svdev.be/ws'
+alerts.baseURL = 'https://alerts.biodiversisteitsportaal.dev.svdev.be'
+bieService.baseURL = 'https://species-ws.biodiversisteitsportaal.dev.svdev.be/ws'
+geoserver.baseURL = 'https://spatial.biodiversisteitsportaal.dev.svdev.be/geoserver'
+biocacheService.baseURL = 'https://records-ws.biodiversisteitsportaal.dev.svdev.be/ws'
 
 skin.layout = 'main'
 accordion.panel.maxHeight = ''
 map.height = ''
 map.bounds = '[]' // note this is a string
 
-//headerAndFooter.baseURL='https://www2.ala.org.au/commonui-bs3'
-headerAndFooter.baseURL = 'https://www.ala.org.au/commonui-bs3-v2/commonui-bs3'
+//headerAndFooter.baseURL='https://www2.biodiversisteitsportaal.dev.svdev.be/commonui-bs3'
+headerAndFooter.baseURL = 'https://branding.biodiversisteitsportaal.dev.svdev.be'
 
 biocache.filter = "&fq=rank:(species%20OR%20subspecies)&fq=-occurrence_status_s:absent&fq=geospatial_kosher:true&fq=occurrence_year:*"
 
@@ -134,7 +134,7 @@ grails.cache.config = {
 
 headerAndFooter.excludeApplicationJs = true
 orgNameLong = 'Atlas of Living Australia'
-breadcrumbParent = 'https://www.ala.org.au/explore-by-location/,Explore'
+breadcrumbParent = 'https://www.biodiversisteitsportaal.dev.svdev.be/explore-by-location/,Explore'
 
 //google.apikey=
 
