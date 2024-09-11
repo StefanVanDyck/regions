@@ -1,5 +1,8 @@
 package au.org.ala.regions
 
+import groovy.util.logging.Slf4j
+
+@Slf4j
 class RegionController {
 
     MetadataService metadataService
@@ -35,6 +38,8 @@ class RegionController {
     def showSpecies() {
         Boolean showHubData = params.boolean('showHubData', false)
         def species = metadataService.getSpecies(params.regionFid, params.regionType, params.regionName, params.regionPid, params.group, params.subgroup, showHubData, params.from, params.to, params.pageIndex ?: "0", params.fq)
+
+        log.warn("SPECIES: {}", species)
 
         render template: 'species', model: [species       : species,
                                             speciesPageUrl: "${metadataService.BIE_URL}/species",
