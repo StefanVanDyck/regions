@@ -3,6 +3,7 @@ package au.org.ala.regions
 import grails.converters.JSON
 import grails.plugin.cache.Cacheable
 import grails.util.Metadata
+import groovy.util.logging.Slf4j
 import org.apache.commons.lang.StringEscapeUtils
 import org.grails.web.json.JSONObject
 import org.jasig.cas.client.util.CommonUtils
@@ -10,6 +11,7 @@ import org.jasig.cas.client.util.URIBuilder
 
 import javax.annotation.PostConstruct
 
+@Slf4j
 class MetadataService {
 
     static transactional = false
@@ -201,6 +203,8 @@ class MetadataService {
 
         url = appendQueryParams(url, query)
 
+        log.warn("SPECIES URL: {}", url)
+
         def speciesCountResult = getJSON(url)
         def speciesCount = 0
         if (speciesCountResult && speciesCountResult instanceof List && speciesCountResult.size() > 0) {
@@ -217,6 +221,7 @@ class MetadataService {
                         it.label.split('\\|').size() >= 2
                     }.collect { result ->
                         List info = Arrays.asList(result.label.split('\\|'))
+                        log.warn("INFO: {}", info)
                         [
                                 name      : info.get(0),
                                 guid      : info.get(1),
