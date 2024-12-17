@@ -480,6 +480,10 @@ var RegionWidget = function (config) {
             }
         },
 
+        selectSpeciesListHandler: function (speciesListName, fq) {
+            console.log('selectSpeciesListHandler function invoked')
+        },
+
         speciesLoaded: function () {
             var msz = $('#moreSpeciesZone');
             $('#species').effect('highlight', {color: '#ededed'}, 2000);
@@ -499,6 +503,10 @@ var RegionWidget = function (config) {
                 $('#speciesCount').text('(' + region.format(parseInt(msz.attr('speciesCount'))) + ')');
             }
             $('#speciesCountLabel').effect('highlight', {color: '#ededed'}, 2000);
+        },
+
+        speciesListLoaded: function () {
+            console.log('speciesListLoaded function invoked');
         },
 
         showMoreSpecies: function () {

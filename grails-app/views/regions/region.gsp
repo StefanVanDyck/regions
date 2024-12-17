@@ -140,6 +140,9 @@
             <li><a id="taxonomyTab" href="#taxonomyTabContent" data-toggle="tab">
                 <g:message code="explore.by.taxonomy"/> <i
                     class="fa fa-cog fa-spin fa-lg hidden"></i></a></li>
+            <li><a id="speciesListsTab" href="#speciesListsTabContent" data-toggle="tab">
+                <g:message code="explore.by.specieslists"/> <i
+                        class="fa fa-cog fa-spin fa-lg hidden"></i></a></li>
         </ul>
 
         <div class="tab-content">
@@ -189,6 +192,49 @@
             <div class="tab-pane" id="taxonomyTabContent">
                 <div id="charts">
                     <i class="spinner fa fa-cog fa-spin fa-3x"></i>
+                </div>
+            </div>
+
+            <div class="tab-pane active" id="speciesListsTabContent">
+                <table id="speciesLists"
+                       tagName="tbody"
+                       class="table table-condensed table-hover"
+                       aa-href="${g.createLink(controller: 'region', action: 'showGroups', params: [regionFid: region.fid, regionType: region.type, regionName: region.name, regionPid: region.pid])}"
+                       aa-js-before="setHubConfig();"
+                       aa-js-after="regionWidget.groupsLoaded();"
+                       aa-refresh-zones="groupsZone"
+                       aa-queue="abort">
+                    <thead>
+                    <tr>
+                        <th class="text-center"><g:message code="specieslists"/></th>
+                    </tr>
+                    </thead>
+                    <tbody id="speciesListsZone" tagName="tbody">
+                    <tr class="spinner">
+                        <td class="spinner text-center">
+                            <i class="fa fa-cog fa-spin fa-2x"></i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table class="table table-condensed table-hover" id="specieslist-species">
+                    <thead>
+                    <tr>
+                        <th colspan="2" class="text-center"><g:message code="species"/></th>
+                        <th class="text-right"><g:message code="records"/></th>
+                    </tr>
+                    </thead>
+%{--                    <aa:zone id="specieslistSpeciesZone" tag="tbody" jsAfter="regionWidget.speciesListsLoaded();">--}%
+%{--                        <tr class="spinner">--}%
+%{--                            <td colspan="3" class="spinner text-center">--}%
+%{--                                <i class="fa fa-cog fa-spin fa-2x"></i>--}%
+%{--                            </td>--}%
+%{--                        </tr>--}%
+%{--                    </aa:zone>--}%
+                </table>
+
+                <div id="exploreButtonsZone">
+
                 </div>
             </div>
         </div>

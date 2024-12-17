@@ -22,7 +22,7 @@ class MetadataService {
     final static String PAGE_SIZE = "50"
 
     String BIE_URL, BIE_SERVICE_URL, BIOCACHE_URL, BIOCACHE_SERVICE_URL, ALERTS_URL, DEFAULT_IMG_URL, QUERY_CONTEXT,
-           HUB_FILTER, INTERSECT_OBJECT
+           HUB_FILTER, INTERSECT_OBJECT, SPECIES_LIST_URL
     Boolean ENABLE_HUB_DATA, ENABLE_QUERY_CONTEXT, ENABLE_OBJECT_INTERSECTION
     String CONFIG_DIR
 
@@ -41,6 +41,7 @@ class MetadataService {
         QUERY_CONTEXT = grailsApplication.config.getProperty('biocache.queryContext')
         ENABLE_OBJECT_INTERSECTION = grailsApplication.config.getProperty('layers.enableObjectIntersection')?.toBoolean() ?: false
         INTERSECT_OBJECT = grailsApplication.config.getProperty('layers.intersectObject')
+        SPECIES_LIST_URL = grailsApplication.config.getProperty('speciesList.baseURL')
 
         //add biocache.filter to HUB_FILTER
         if (ENABLE_HUB_DATA) {
@@ -226,6 +227,22 @@ class MetadataService {
                     }
             ]
         }
+    }
+
+    def getSpeciesLists() {
+        String url = "${SPECIES_LIST_URL}/ws/speciesList"
+        def speciesLists = getJSON(url)
+
+        [
+                totalRecords: speciesLists.listCount,
+                records     : speciesLists.collect { item ->
+                    [
+                            dataResourceUid: item.dataResourceUid,
+                            listName       : item.listName,
+                            listType       : item.listType
+                    ]
+                }
+        ]
     }
 
     /**
