@@ -28,6 +28,11 @@ class RegionController {
         render template: 'groups', model: [groups: groups], contentType: 'text/xml'
     }
 
+    def showSpeciesLists() {
+        def speciesLists = metadataService.getSpeciesLists()
+
+        render template: 'speciesLists', model: [speciesLists: speciesLists], contentType: 'text/xml'
+    }
     /**
      *
      * @return
@@ -50,4 +55,10 @@ class RegionController {
                                             showHubData   : showHubData,
                                             fq            : params.fq], contentType: 'text/xml'
     }
+
+    def showSpeciesListSpecies() {
+        def species = new ArrayList();
+        // TODO implement this
+    }
+
 }
