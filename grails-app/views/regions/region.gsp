@@ -52,7 +52,8 @@
             ,enableRegionOverlay: ${enableRegionOverlay != null ? enableRegionOverlay : 'true'},
             mapMinimalUrl: "${grailsApplication.config.getProperty('map.minimal.url')}",
             mapMinimalAttribution: "${raw(grailsApplication.config.getProperty('map.minimal.attr'))}",
-            mapMinimalSubdomains: "${grailsApplication.config.getProperty('map.minimal.subdomains')}"
+            mapMinimalSubdomains: "${grailsApplication.config.getProperty('map.minimal.subdomains')}",
+            pointColour: "${grailsApplication.config.getProperty('map.pointColour')}"
         };
     </asset:script>
 

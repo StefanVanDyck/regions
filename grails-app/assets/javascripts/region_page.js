@@ -1061,7 +1061,7 @@ var RegionMap = function (config) {
             bgcolor: "0xFFFFFF",
             cql_filter: "",
             symsize: 3,
-            env: "color:FF0000;name:circle;size:3;opacity:" + getOccurrenceOpacity(),
+            env: "color:" + REGION_CONFIG.pointColour + ";name:circle;size:3;opacity:" + getOccurrenceOpacity(),
             exceptions: "application-vnd.ogc.se_inimage",
             outline: false,
             opacity: getOccurrenceOpacity(),
