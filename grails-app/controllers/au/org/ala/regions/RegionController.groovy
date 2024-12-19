@@ -57,8 +57,21 @@ class RegionController {
     }
 
     def showSpeciesListSpecies() {
-        def species = new ArrayList();
-        // TODO implement this
+        Boolean showHubData = params.boolean('showHubData', false)
+        def species = metadataService.getSpecies(params.regionFid, params.regionType, params.regionName, params.regionPid, params.speciesListDrUid, showHubData, params.from, params.to, params.pageIndex ?: "0", params.fq)
+
+        render template: 'speciesListSpecies', model: [species        : species,
+                                                       speciesPageUrl : "${metadataService.BIE_URL}/species",
+                                                       regionFid      : params.regionFid,
+                                                       regionType     : params.regionType,
+                                                       regionName     : params.regionName,
+                                                       regionPid      : params.regionPid,
+                                                       pageIndex      : params.pageIndex ? Integer.parseInt(params.pageIndex) : 0,
+                                                       from           : params.from,
+                                                       to             : params.to,
+                                                       speciesListName: params.speciesListName,
+                                                       showHubData    : showHubData,
+                                                       fq             : params.fq], contentType: 'text/xml'
     }
 
 }
