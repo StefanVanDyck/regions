@@ -194,15 +194,15 @@
                     <i class="spinner fa fa-cog fa-spin fa-3x"></i>
                 </div>
             </div>
-
-            <div class="tab-pane active" id="speciesListsTabContent">
+            <!-- Start Species Lists tab -->
+            <div class="tab-pane" id="speciesListsTabContent">
                 <table id="speciesLists"
                        tagName="tbody"
                        class="table table-condensed table-hover"
-                       aa-href="${g.createLink(controller: 'region', action: 'showGroups', params: [regionFid: region.fid, regionType: region.type, regionName: region.name, regionPid: region.pid])}"
+                       aa-href="${g.createLink(controller: 'region', action: 'showSpeciesLists')}"
                        aa-js-before="setHubConfig();"
-                       aa-js-after="regionWidget.groupsLoaded();"
-                       aa-refresh-zones="groupsZone"
+                       aa-js-after="regionWidget.speciesListsLoaded();"
+                       aa-refresh-zones="speciesListsZone"
                        aa-queue="abort">
                     <thead>
                     <tr>
@@ -210,11 +210,11 @@
                     </tr>
                     </thead>
                     <tbody id="speciesListsZone" tagName="tbody">
-                    <tr class="spinner">
-                        <td class="spinner text-center">
-                            <i class="fa fa-cog fa-spin fa-2x"></i>
-                        </td>
-                    </tr>
+%{--                    <tr class="spinner">--}%
+%{--                        <td class="spinner text-center">--}%
+%{--                            <i class="fa fa-cog fa-spin fa-2x"></i>--}%
+%{--                        </td>--}%
+%{--                    </tr>--}%
                     </tbody>
                 </table>
                 <table class="table table-condensed table-hover" id="specieslist-species">
@@ -224,13 +224,13 @@
                         <th class="text-right"><g:message code="records"/></th>
                     </tr>
                     </thead>
-%{--                    <aa:zone id="specieslistSpeciesZone" tag="tbody" jsAfter="regionWidget.speciesListsLoaded();">--}%
+                    <aa:zone id="speciesListSpeciesZone" tag="tbody" jsAfter="regionWidget.speciesListsLoaded();">
 %{--                        <tr class="spinner">--}%
 %{--                            <td colspan="3" class="spinner text-center">--}%
 %{--                                <i class="fa fa-cog fa-spin fa-2x"></i>--}%
 %{--                            </td>--}%
 %{--                        </tr>--}%
-%{--                    </aa:zone>--}%
+                    </aa:zone>
                 </table>
 
                 <div id="exploreButtonsZone">

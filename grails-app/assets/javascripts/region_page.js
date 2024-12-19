@@ -82,6 +82,10 @@ function refreshSpeciesGroup() {
     $('#groups').click()
 }
 
+function refreshSpeciesLists() {
+    $('#speciesLists').click();
+}
+
 var region = {
     /**
      * Builds the query as a map that can be passed directly as data in an ajax call
@@ -226,6 +230,7 @@ var RegionWidget = function (config) {
         state.regionPid = config.regionPid;
         state.regionLayerName = config.regionLayerName;
         state.group = state.group ? state.group : 'ALL_SPECIES';
+        state.speciesList = state.speciesList ? state.speciesList : 'Birds Directive Annex 1, Annex 2.1 and Annex 2.2 - combined';
         state.fq = config.fq;
         state.from = state.from ? state.from : defaultFromYear;
         state.to = state.to ? state.to : defaultToYear;
@@ -252,7 +257,11 @@ var RegionWidget = function (config) {
 
         // Initialize click events on individual species
         $(document).on('click', "#species tbody tr.link", function () {
-            selectSpecies(this);
+            selectSpecies(this, "species");
+        });
+
+        $(document).on('click', "#specieslist-species tbody tr.link", function () {
+            selectSpecies(this, "specieslist-species");
         });
 
         // Initialize info message
@@ -275,6 +284,11 @@ var RegionWidget = function (config) {
             updateState({tab: 'taxonomyTab', group: 'ALL_SPECIES', fq: '', subgroup: '', guid: ''});
             taxonomyChart.reset();
         });
+        $('#speciesListsTab').on('click', function (event){
+           if(regionWidget) regionWidget.getTimeControls().stop();
+           updateState({tab: 'speciesListsTab'});
+           $('#Subsidiebesluit-row i').click();
+        });
         $('#' + state.tab).click();
 
     };
@@ -289,6 +303,7 @@ var RegionWidget = function (config) {
         $.bbq.pushState({
             group: state.group,
             subgroup: state.subgroup,
+            speciesListDrUid: state.speciesListDrUid,
             guid: state.guid,
             from: state.from,
             to: state.to,
@@ -301,8 +316,8 @@ var RegionWidget = function (config) {
      * Function called when the user selects a species
      * @param row
      */
-    var selectSpecies = function (row) {
-        var s = $("#species");
+    var selectSpecies = function (row, speciesTableID) {
+        var s = $("#" + speciesTableID);
         s.find("tbody tr.link").removeClass('speciesSelected');
         s.find("tbody tr.infoRowLinks").hide();
         var nextTr = $(row).next('tr');
@@ -319,7 +334,7 @@ var RegionWidget = function (config) {
      * @param tabId
      */
     var hideTabSpinner = function (tabId) {
-        if ($.active === 1) {
+        if ($.active > 0) {
             if (tabId) {
                 $('#' + tabId + ' i').addClass('hidden');
             } else {
@@ -406,12 +421,32 @@ var RegionWidget = function (config) {
         AjaxAnywhere.dynamicParams = state;
     };
 
+    var selectSpeciesList = function (listName, speciesListDrUid, fq){
+        $('.species-list-row').removeClass('groupSelected');
+
+        // Update widget state
+        updateState({speciesListDrUid: speciesListDrUid, guid: '', fq: fq});
+        // Mark as selected
+        var rowId = listName.replace(/[^A-Za-z\\d_]/g, "") + '-row';
+        $('#' + rowId).addClass('groupSelected');
+
+        // Last
+        if (regionMap) {
+            regionMap.reloadRecordsOnMap();
+        }
+        AjaxAnywhere.dynamicParams = state;
+    };
+
     var getGroupId = function () {
         return state.group.replace(/[^A-Za-z0-9\\d_]/g, "") + '-row';
     };
 
     var getSubgroupId = function () {
         return state.subgroup.replace(/[^A-Za-z0-9\\d_]/g, "") + '-row';
+    };
+
+    var getSpeciesListId = function () {
+        return state.speciesList.replace(/[^A-Za-z0-9\\d_]/g, "") + '-row';
     };
 
     var _public = {
@@ -472,6 +507,12 @@ var RegionWidget = function (config) {
             }
         },
 
+        speciesListsLoaded: function () {
+            $('#speciesLists').effect('highlight', {color: '#ededed'}, 2000);
+
+            $('#' + getSpeciesListId()).click();
+        },
+
         selectGroupHandler: function (group, isSubgroup, fq) {
             if (isSubgroup) {
                 selectSubgroup(group, fq);
@@ -480,8 +521,8 @@ var RegionWidget = function (config) {
             }
         },
 
-        selectSpeciesListHandler: function (speciesListName, fq) {
-            console.log('selectSpeciesListHandler function invoked')
+        selectSpeciesListHandler: function (listName, speciesListDrUid, fq) {
+            selectSpeciesList(listName, speciesListDrUid, fq);
         },
 
         speciesLoaded: function () {
@@ -506,7 +547,24 @@ var RegionWidget = function (config) {
         },
 
         speciesListLoaded: function () {
-            console.log('speciesListLoaded function invoked');
+            var msz = $('#moreSpeciesListSpeciesZone');
+            $('#speciesListSpecies').effect('highlight', {color: '#ededed'}, 2000);
+            var totalRecords = msz.attr('totalRecords');
+            if (isNaN(totalRecords)) {
+                $('#totalRecords').text('');
+            } else {
+                $('#totalRecords').text('(' + region.format(parseInt(msz.attr('totalRecords'))) + ')');
+            }
+
+            $('#occurrenceRecords').effect('highlight', {color: '#ededed'}, 2000);
+
+            var speciesCount = msz.attr('speciesCount');
+            if (isNaN(speciesCount)) {
+                $('#speciesCount').text('');
+            } else {
+                $('#speciesCount').text('(' + region.format(parseInt(msz.attr('speciesCount'))) + ')');
+            }
+            $('#speciesCountLabel').effect('highlight', {color: '#ededed'}, 2000);
         },
 
         showMoreSpecies: function () {
