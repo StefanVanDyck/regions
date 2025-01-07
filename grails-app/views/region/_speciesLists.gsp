@@ -8,7 +8,7 @@
                 class="species-list-row link" href="${g.createLink(controller: 'region', action: 'showSpeciesListSpecies')}"
 %{--                ${group.parent ? "parent=${group.parent.replaceAll(/[^A-Za-z\\d_]/, "")}-row style=display:none" : ""}--}%
                 aa-refresh-zones="speciesListSpeciesZone"
-                aa-js-before="regionWidget.selectSpeciesListHandler('${speciesList.listName.encodeAsJavaScript()}', '${speciesList.dataResourceUid.encodeAsJavaScript()}', null);"
+                aa-js-before="regionWidget.selectSpeciesListHandler('${speciesList.listName.encodeAsJavaScript()}', '${speciesList.dataResourceUid.encodeAsJavaScript()}', 'speciesListUid:${speciesList.dataResourceUid.encodeAsJavaScript()}');"
                 aa-js-after="regionWidget.speciesListLoaded();"
                 aa-queue="abort">
                 <td class="level1">

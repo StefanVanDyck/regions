@@ -46,6 +46,7 @@ $(function () {
                 //console.log("switch toggled", state);
                 regionWidget.getCurrentState().showHubData = !state;
                 refreshSpeciesGroup();
+                refreshSpeciesLists();
                 taxonomyChart.load()
             }
         });
@@ -68,6 +69,7 @@ function chartReady() {
     });
 
     refreshSpeciesGroup();
+    refreshSpeciesLists();
 }
 
 function setHubConfig() {
@@ -144,6 +146,10 @@ var region = {
 
         if (timeFacet) {
             params.push("fq=" + encodeURIComponent(timeFacet));
+        }
+
+        if(currentState.speciesListDrUid){
+            params.push("fq=speciesListUid:" + encodeURIComponent(currentState.speciesListDrUid));
         }
 
         // remove any empty elements
@@ -1015,6 +1021,7 @@ var RegionMap = function (config) {
      * Load occurrence data as a wms overlay based on the current selection:
      * - if taxa box is visible, show the selected species group or species
      * - if taxonomy chart is selected, show the current named rank
+     * - if speciesLists tab is selected, show the current speciesList
      * - use date restriction specified by the time slider
      */
     var drawRecordsOverlay = function () {
