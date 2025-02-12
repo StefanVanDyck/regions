@@ -153,8 +153,7 @@
                        aa-href="${g.createLink(controller: 'region', action: 'showGroups', params: [regionFid: region.fid, regionType: region.type, regionName: region.name, regionPid: region.pid])}"
                        aa-js-before="setHubConfig();"
                        aa-js-after="regionWidget.groupsLoaded();"
-                       aa-refresh-zones="groupsZone"
-                       aa-queue="abort">
+                       aa-refresh-zones="groupsZone">
                     <thead>
                     <tr>
                         <th class="text-center"><g:message code="explore.by.group"/></th>
@@ -202,8 +201,7 @@
                        aa-href="${g.createLink(controller: 'region', action: 'showSpeciesLists')}"
                        aa-js-before="setHubConfig();"
                        aa-js-after="regionWidget.speciesListsLoaded();"
-                       aa-refresh-zones="speciesListsZone"
-                       aa-queue="abort">
+                       aa-refresh-zones="speciesListsZone">
                     <thead>
                     <tr>
                         <th class="text-center"><g:message code="specieslists"/></th>
