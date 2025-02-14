@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="breadcrumbParent" content="${grailsApplication.config.getProperty('breadcrumbParent')}"/>
     <meta name="breadcrumb" content="${g.message(code:'regions.title')}"/>
     <meta name="layout" content="${grailsApplication.config.getProperty('skin.layout') ?: 'main'}"/>
 
