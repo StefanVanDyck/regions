@@ -3,7 +3,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <meta name="breadcrumbParent" content="${grailsApplication.config.getProperty('breadcrumbParent')}"/>
     <meta name="breadcrumbs" content="${g.createLink(uri: '/', absolute: true)},${message(code:"regions.title")}"/>
     <meta name="breadcrumb" content="${region.name}"/>
 
