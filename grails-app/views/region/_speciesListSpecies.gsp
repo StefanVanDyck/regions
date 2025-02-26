@@ -59,13 +59,13 @@
             <td></td>
         </tr>
 
-        <tr style="display:none" id="toDelete"><td><div class="text-center" id="exploreButtonsNew">
+        <tr style="display:none" id="buttonsRowSpeciesList"><td><div class="text-center" id="exploreButtonsSpeciesList">
             <a href="${rg.speciesRecordListUrl([guid: null, regionFid: regionFid,
                                                 regionName: regionName, regionType: regionType,
                                                 regionPid: regionPid, from: from, to: to,
                                                 group: group, subgroup: subgroup,
                                                 showHubData: showHubData, fq: fq])}"
-               id="viewRecords" class="btn btn-default"><i class="fa fa-share-square-o"></i>
+               id="viewRecordsSpeciesList" class="btn btn-default"><i class="fa fa-share-square-o"></i>
                 <g:message code="view.records" />
             </a>
 
@@ -74,7 +74,7 @@
                                                  regionPid: regionPid, from: from, to: to,
                                                  group: group, subgroup: subgroup,
                                                  showHubData: showHubData, fq: fq, totalRecords: species.totalRecords])}"
-               id="downloadRecords" class="btn btn-default"><i class="fa fa-download"></i>
+               id="downloadRecordsSpeciesList" class="btn btn-default"><i class="fa fa-download"></i>
                 <g:message code="download.records" />
 
             </a>
