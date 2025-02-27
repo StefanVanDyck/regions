@@ -230,7 +230,7 @@
                     </aa:zone>
                 </table>
 
-                <div id="exploreButtonsZone">
+                <div id="exploreButtonsSpeciesListsZone">
 
                 </div>
             </div>
