@@ -59,13 +59,13 @@
             <td></td>
         </tr>
 
-        <tr style="display:none" id="buttonsRowSpeciesList"><td><div class="text-center" id="exploreButtonsSpeciesList">
+        <tr style="display:none" id="toDeleteSpeciesLists"><td><div class="text-center" id="exploreButtonsSpeciesListsNew">
             <a href="${rg.speciesRecordListUrl([guid: null, regionFid: regionFid,
                                                 regionName: regionName, regionType: regionType,
                                                 regionPid: regionPid, from: from, to: to,
                                                 group: group, subgroup: subgroup,
                                                 showHubData: showHubData, fq: fq])}"
-               id="viewRecordsSpeciesList" class="btn btn-default"><i class="fa fa-share-square-o"></i>
+               id="viewRecords" class="btn btn-default"><i class="fa fa-share-square-o"></i>
                 <g:message code="view.records" />
             </a>
 
@@ -74,7 +74,7 @@
                                                  regionPid: regionPid, from: from, to: to,
                                                  group: group, subgroup: subgroup,
                                                  showHubData: showHubData, fq: fq, totalRecords: species.totalRecords])}"
-               id="downloadRecordsSpeciesList" class="btn btn-default"><i class="fa fa-download"></i>
+               id="downloadRecords" class="btn btn-default"><i class="fa fa-download"></i>
                 <g:message code="download.records" />
 
             </a>
@@ -86,15 +86,15 @@
 
         <script>
             $(function() {
-                var tmp = $('#exploreButtons');
+                var tmp = $('#exploreButtonsSpeciesLists');
                 if (tmp) {
-                    $('#exploreButtons').remove();
+                    $('#exploreButtonsSpeciesLists').remove();
                 }
 
-                $('#exploreButtonsNew').appendTo($('#exploreButtonsZone'));
-                $('#exploreButtonsNew').attr('id', 'exploreButtons');
+                $('#exploreButtonsSpeciesListsNew').appendTo($('#exploreButtonsSpeciesListsZone'));
+                $('#exploreButtonsSpeciesListsNew').attr('id', 'exploreButtonsSpeciesLists');
 
-                $('#toDelete').remove()
+                $('#toDeleteSpeciesLists').remove()
             })
         </script>
 
