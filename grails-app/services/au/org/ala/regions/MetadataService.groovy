@@ -233,7 +233,7 @@ class MetadataService {
         String url = "${SPECIES_LIST_URL}/ws/speciesList"
         def speciesLists = getJSON(url)
 
-        speciesLists.lists.findAll(it.isAuthoritative).collect { item ->
+        speciesLists.lists.findAll{it.isAuthoritative}.collect { item ->
                     [
                             dataResourceUid: item.dataResourceUid,
                             listName       : item.listName,
