@@ -218,7 +218,7 @@ li.regionLink {
 }
 
 .region-details-table tbody td {
-    border: 0;
+    border: 0 !important;
 }
 
 .region-details-table td {
@@ -286,10 +286,6 @@ li.regionLink {
 
 .region-details-table-right tr.infoRowLinks td {
     padding-bottom: 3px;
-}
-
-#speciesLists > tbody > tr {
-    padding-bottom: 0.5em;
 }
 
 tr.groupSelected, tr.groupSelected:hover td {
