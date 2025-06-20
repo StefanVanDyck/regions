@@ -293,12 +293,12 @@ li.regionLink {
 }
 
 tr.groupSelected, tr.groupSelected:hover td {
-    background-color: #C44D34 !important;
+    background-color: rgb(192, 67, 132) !important;
     color: white;
 }
 
 tr.speciesSelected, tr.speciesSelected:hover td {
-    background-color: #C44D34 !important;
+    background-color: rgb(192, 67, 132) !important;
     color: white;
 }
 
@@ -478,8 +478,8 @@ tr.speciesSelected, tr.speciesSelected:hover td {
     padding: 4px 12px;
     text-align: center;
     vertical-align: middle;
-    background-color: #C44D34;
-    background-image: linear-gradient(to bottom, #C44D34, #C44D34);
+    background-color: rgb(192, 67, 132);
+    background-image: linear-gradient(to bottom, rgb(192, 67, 132), rgb(192, 67, 132));
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     color: #ffffff;
