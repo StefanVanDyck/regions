@@ -578,6 +578,11 @@ var RegionWidget = function (config) {
             AjaxAnywhere.dynamicParams = this.getCurrentState();
         },
 
+        showMoreSpeciesListSpecies: function () {
+            $('#showMoreSpeciesListSpeciesButton').html("<i class='fa fa-cog fa-spin'></i>");
+            AjaxAnywhere.dynamicParams = this.getCurrentState();
+        },
+
         setMap: function (map) {
             regionMap = map;
         },

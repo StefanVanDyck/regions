@@ -7,7 +7,6 @@
 
     <g:if test="${pageIndex && pageIndex != 0}">
         <zone id="moreSpeciesZone"><![CDATA[
-        <tbody id="moreSpeciesZone">
     </g:if>
 
         <g:if test="${species.totalRecords == 0}">

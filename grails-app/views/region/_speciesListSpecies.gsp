@@ -46,10 +46,10 @@
         <tr id="moreSpeciesListSpeciesZone" totalRecords="${species.totalRecords}" speciesCount="${species.speciesCount}"
             style="${species.records.size() > 0 && species.records.size() % 50 == 0 ? "" : "display:none;"}">
             <td colspan="2" class="text-center">
-                <a aa-refresh-zones="moreSpeciesListSpeciesZone" id="showMoreSpeciesButton"
-                   href="${g.createLink(controller: 'region', action: 'showSpecies', params: [pageIndex: pageIndex ? pageIndex + 1 : '1'])}"
-                   aa-js-before="regionWidget.showMoreSpecies();"
-                   aa-js-after="regionWidget.speciesLoaded();"
+                <a aa-refresh-zones="moreSpeciesListSpeciesZone" id="showMoreSpeciesListSpeciesButton"
+                   href="${g.createLink(controller: 'region', action: 'showSpeciesListSpecies', params: [pageIndex: pageIndex ? pageIndex + 1 : '1'])}"
+                   aa-js-before="regionWidget.showMoreSpeciesListSpecies();"
+                   aa-js-after="regionWidget.speciesListLoaded();"
                    aa-queue="abort"
                    class="btn btn-default btn-sm"><i class="fa fa-plus"></i>
 

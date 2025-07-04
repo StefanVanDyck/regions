@@ -302,6 +302,10 @@ tr.speciesSelected, tr.speciesSelected:hover td {
     min-width: 60%;
 }
 
+#showMoreSpeciesListSpeciesButton {
+    min-width: 60%;
+}
+
 #exploreButtons a:first-child {
     margin-right: 8em;
 }
