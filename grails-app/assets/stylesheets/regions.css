@@ -193,108 +193,108 @@ li.regionLink {
     /*background-color: #ffffff;*/
 }
 
-#groups, #species {
+.region-details-table {
     height: 560px;
     max-height: 560px;
     margin-bottom: .8em;
 }
 
-#groups thead, #species thead {
+.region-details-table thead {
     height: 30px;
     border-bottom: 1px solid #dddddd;
 }
 
-#species thead tr, #groups thead tr {
+.region-details-table thead tr {
     display: block;
     position: relative;
     width: 100%;
 }
 
-#groups tbody, #species tbody {
+.region-details-table tbody {
     height: 530px;
     max-height: 530px;
     display: block;
     overflow-y: auto;
 }
 
-#groups tbody td, #species tbody td {
-    border: 0;
+.region-details-table tbody td {
+    border: 0 !important;
 }
 
-#groups td, #species td {
+.region-details-table td {
     padding: 1px 1.5em 1px 1em;
     font-size: .9em;
 }
 
-#species tbody .spinner, #groups tbody .spinner {
+.region-details-table tbody .spinner {
     display: block;
     height: 99.5%;
 }
 
-#species tbody td.spinner i, #groups tbody td.spinner i {
+.region-details-table tbody td.spinner i {
     margin-top: 230px !important;
 }
 
-#groups {
+.region-details-table-left {
     border-right: 1px solid #dddddd;
     float: left;
     table-layout: fixed;
     width: 45%;
 }
 
-#groups thead th {
+.region-details-table-left thead th {
     display: inherit;
 }
 
-#groups tbody tr {
+.region-details-table-left tbody tr {
     display: block;
 }
 
-#groups tbody td {
+.region-details-table-left tbody td {
     display: inherit;
 }
 
-#groups td.level0 {
+.region-details-table-left td.level0 {
     font-weight: bold;
 }
 
-#groups td.level1 {
+.region-details-table-left td.level1 {
     padding-left: 2em;
 }
 
-#species {
+.region-details-table-right {
     float: right;
     table-layout: fixed;
     width: 55%;
 }
 
-#species thead th:first-child {
+.region-details-table-right thead th:first-child {
     width: 85%;
 }
 
-#species td:first-child {
+.region-details-table-right td:first-child {
     padding-right: 0;
 }
 
-#species tbody tr.link td:first-child {
+.region-details-table-right tbody tr.link td:first-child {
     width: 5%;
 }
 
-#species tr.infoRowLinks {
+.region-details-table-right tr.infoRowLinks {
     /*background-color: #F0F0E8;*/
 }
 
-#species tr.infoRowLinks td {
+.region-details-table-right tr.infoRowLinks td {
     padding-bottom: 3px;
 }
 
 tr.groupSelected, tr.groupSelected:hover td {
-    background-color: #C44D34 !important;
+    background-color: rgb(192, 67, 132) !important;
     color: white;
 }
 
 tr.speciesSelected, tr.speciesSelected:hover td {
-    background-color: #C44D34 !important;
+    background-color: rgb(192, 67, 132) !important;
     color: white;
 }
 
@@ -474,8 +474,8 @@ tr.speciesSelected, tr.speciesSelected:hover td {
     padding: 4px 12px;
     text-align: center;
     vertical-align: middle;
-    background-color: #C44D34;
-    background-image: linear-gradient(to bottom, #C44D34, #C44D34);
+    background-color: rgb(192, 67, 132);
+    background-image: linear-gradient(to bottom, rgb(192, 67, 132), rgb(192, 67, 132));
     background-repeat: repeat-x;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     color: #ffffff;

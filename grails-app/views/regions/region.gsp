@@ -148,7 +148,7 @@
             <div class="tab-pane active" id="speciesTabContent">
                 <table id="groups"
                        tagName="tbody"
-                       class="table table-condensed table-hover"
+                       class="table table-condensed table-hover region-details-table region-details-table-left"
                        aa-href="${g.createLink(controller: 'region', action: 'showGroups', params: [regionFid: region.fid, regionType: region.type, regionName: region.name, regionPid: region.pid])}"
                        aa-js-before="setHubConfig();"
                        aa-js-after="regionWidget.groupsLoaded();"
@@ -166,7 +166,7 @@
                     </tr>
                     </tbody>
                 </table>
-                <table class="table table-condensed table-hover" id="species">
+                <table class="table table-condensed table-hover region-details-table region-details-table-right" id="species">
                     <thead>
                     <tr>
                         <th colspan="2" class="text-center"><g:message code="species"/></th>
@@ -196,7 +196,7 @@
             <div class="tab-pane" id="speciesListsTabContent">
                 <table id="speciesLists"
                        tagName="tbody"
-                       class="table table-condensed table-hover"
+                       class="table table-condensed table-hover region-details-table region-details-table-left"
                        aa-href="${g.createLink(controller: 'region', action: 'showSpeciesLists')}"
                        aa-js-before="setHubConfig();"
                        aa-js-after="regionWidget.speciesListsLoaded();"
@@ -214,7 +214,7 @@
 %{--                    </tr>--}%
                     </tbody>
                 </table>
-                <table class="table table-condensed table-hover" id="specieslist-species">
+                <table class="table table-condensed table-hover region-details-table region-details-table-right" id="specieslist-species">
                     <thead>
                     <tr>
                         <th colspan="2" class="text-center"><g:message code="species"/></th>
