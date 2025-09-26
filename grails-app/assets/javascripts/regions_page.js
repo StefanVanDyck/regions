@@ -114,7 +114,7 @@
     function showInfo(btn, label, zoom, latlng) {
         $('#click-info').html(btn + zoom);
 
-        if (regionSelectedLayer.tilelayer) {
+        if (regionSelectedLayer.tilelayer && selectedRegionType.getFid()) {
             // bind popup to layer
             regionSelectedLayer.popup = L.popup()
                 .setLatLng(latlng)
@@ -520,7 +520,7 @@
                     latlng = this.subregionlatlng
                 }
 
-//                showInfo(btn, label, zoom, latlng);
+                showInfo(btn, label, zoom, latlng);
             }
         }
     };
