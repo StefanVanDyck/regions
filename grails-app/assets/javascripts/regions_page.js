@@ -520,7 +520,7 @@
                     latlng = this.subregionlatlng
                 }
 
-                showInfo(btn, label, zoom, latlng);
+//                showInfo(btn, label, zoom, latlng);
             }
         }
     };
