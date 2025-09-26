@@ -813,7 +813,7 @@
          \*****************************************/
         $('#accordion').on('click', 'li.regionLink', function () {
             var name = $(this).html();
-            if (selectedRegion !== null && name === selectedRegion.name) {
+            if (selectedRegion !== null && name === selectedRegion.name && selectedRegionType.getFid()) {
                 document.location.href = selectedRegion.urlToViewRegion();
             }
             new Region(name).set();
