@@ -405,6 +405,7 @@
             if (this.name.toLowerCase() !== 'n/a') {
                 $.bbq.pushState({region: this.name});
                 selectedRegionType.highlightInList(this.name);
+                this.setLinks(selectedRegion);
             }
             if (this.other) {
                 this.id = layers[selectedRegionType.name].objects[this.name].fid;
@@ -417,8 +418,8 @@
                     this.displayRegion();
                 }
                 enableRegionsSlider();
+                this.setLinks(selectedRegion);
             }
-            this.setLinks(selectedRegion);
 
         },
         /* Deselect this instance and remove its screen artifacts */
