@@ -417,8 +417,6 @@
                     this.displayRegion();
                 }
                 enableRegionsSlider();
-            }
-            if (this.id && this.id.length > 0) {
                 this.setLinks(selectedRegion);
             }
         },
