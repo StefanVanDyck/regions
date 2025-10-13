@@ -405,7 +405,6 @@
             if (this.name.toLowerCase() !== 'n/a') {
                 $.bbq.pushState({region: this.name});
                 selectedRegionType.highlightInList(this.name);
-                this.setLinks(selectedRegion);
             }
             if (this.other) {
                 this.id = layers[selectedRegionType.name].objects[this.name].fid;
@@ -418,8 +417,8 @@
                     this.displayRegion();
                 }
                 enableRegionsSlider();
-                this.setLinks(selectedRegion);
             }
+            this.setLinks(selectedRegion);
         },
         /* Deselect this instance and remove its screen artifacts */
         clear: function () {
@@ -475,7 +474,7 @@
         /* Build the url to view the current region */
         urlToViewRegion: function () {
             var pid = ''
-            if (this.id != '' && this.id != undefined) {
+            if (this.id != '' && this.id != undefined && this.subregion !== null) {
                 pid = '?pid=' + this.id
             }
             if (selectedRegionType.other && selectedRegion.subregion != null) {
