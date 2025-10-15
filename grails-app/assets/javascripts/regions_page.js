@@ -474,7 +474,7 @@
         /* Build the url to view the current region */
         urlToViewRegion: function () {
             var pid = ''
-            if (this.id != '' && this.id != undefined && this.subregion !== null) {
+            if (this.id != '' && this.id != undefined && !this.id.startsWith("cl")) {
                 pid = '?pid=' + this.id
             }
             if (selectedRegionType.other && selectedRegion.subregion != null) {
