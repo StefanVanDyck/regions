@@ -293,7 +293,7 @@ var RegionWidget = function (config) {
         $('#speciesListsTab').on('click', function (event){
            if(regionWidget) regionWidget.getTimeControls().stop();
            updateState({tab: 'speciesListsTab'});
-           $('#Subsidiebesluit-row i').click();
+           $('#taxa-level-0-sl tr:first td:first a').click(); //click first species list so it's highlighted and its species are shown on the map
         });
         $('#' + state.tab).click();
 
