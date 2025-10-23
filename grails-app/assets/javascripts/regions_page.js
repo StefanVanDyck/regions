@@ -114,7 +114,7 @@
     function showInfo(btn, label, zoom, latlng) {
         $('#click-info').html(btn + zoom);
 
-        if (regionSelectedLayer.tilelayer) {
+        if (regionSelectedLayer.tilelayer && selectedRegionType.getFid()) {
             // bind popup to layer
             regionSelectedLayer.popup = L.popup()
                 .setLatLng(latlng)
@@ -419,7 +419,6 @@
                 enableRegionsSlider();
             }
             this.setLinks(selectedRegion);
-
         },
         /* Deselect this instance and remove its screen artifacts */
         clear: function () {
@@ -475,7 +474,7 @@
         /* Build the url to view the current region */
         urlToViewRegion: function () {
             var pid = ''
-            if (this.id != '' && this.id != undefined) {
+            if (this.id != '' && this.id != undefined && !this.id.startsWith("cl")) {
                 pid = '?pid=' + this.id
             }
             if (selectedRegionType.other && selectedRegion.subregion != null) {
@@ -813,7 +812,7 @@
          \*****************************************/
         $('#accordion').on('click', 'li.regionLink', function () {
             var name = $(this).html();
-            if (selectedRegion !== null && name === selectedRegion.name) {
+            if (selectedRegion !== null && name === selectedRegion.name && selectedRegionType.getFid()) {
                 document.location.href = selectedRegion.urlToViewRegion();
             }
             new Region(name).set();
