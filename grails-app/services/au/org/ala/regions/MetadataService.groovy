@@ -22,7 +22,7 @@ class MetadataService {
     final static String PAGE_SIZE = "50"
 
     String BIE_URL, BIE_SERVICE_URL, BIOCACHE_URL, BIOCACHE_SERVICE_URL, ALERTS_URL, DEFAULT_IMG_URL, QUERY_CONTEXT,
-           HUB_FILTER, INTERSECT_OBJECT, SPECIES_LIST_URL
+           HUB_FILTER, INTERSECT_OBJECT, SPECIES_LIST_URL, OCCURRENCES_SORT_FIELD
     Boolean ENABLE_HUB_DATA, ENABLE_QUERY_CONTEXT, ENABLE_OBJECT_INTERSECTION
     String CONFIG_DIR
 
@@ -49,6 +49,7 @@ class MetadataService {
         } else {
             HUB_FILTER = grailsApplication.config.getProperty('biocache.filter')
         }
+        OCCURRENCES_SORT_FIELD = grailsApplication.config.getProperty('biocache.occurrences.sort')
     }
 
     /**
@@ -416,7 +417,7 @@ class MetadataService {
     private Map buildSearchOccurrencesWsParams(String regionFid, String regionType, String regionName, String regionPid, String groupName = null, String subgroup, String from = null, String to = null, String pageIndex = "0", Boolean showHubData = false, String filter = null) {
         Map params = [
                 facets  : 'names_and_lsid',
-                fsort   : 'taxon_name',
+                fsort   : OCCURRENCES_SORT_FIELD,
                 pageSize: 0,
                 flimit  : PAGE_SIZE,
                 foffset : Integer.parseInt(pageIndex) * Integer.parseInt(PAGE_SIZE)
