@@ -15,7 +15,7 @@
                     <g:if test="${!group.parent}">
                         <i class="fa fa-chevron-right"></i>
                     </g:if>
-                    ${message(code: group.name, default: group.commonName)}
+                    ${message(code: group.name.replaceAll(" ", ""), default: group.commonName)}
                 </td>
             </tr>
         </g:each>
