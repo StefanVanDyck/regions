@@ -13,6 +13,13 @@
                 aa-queue="abort">
                 <td class="level1">
                     ${speciesList.listName}
+                    <a href="${grailsApplication.config.getProperty('speciesList.baseURL')}/speciesListItem/list/${speciesList.dataResourceUid}"
+                       target="_blank"
+                       class="external-link"
+                       rel="noopener noreferrer"
+                       title="Open conservation list details">
+                        <i class="fa-solid fa-up-right-from-square"></i>
+                    </a>
                 </td>
             </tr>
         </g:each>

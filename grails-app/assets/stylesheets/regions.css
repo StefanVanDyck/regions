@@ -298,6 +298,16 @@ tr.speciesSelected, tr.speciesSelected:hover td {
     color: white;
 }
 
+.external-link {
+    display: none;
+    margin-left: 6px;
+    color: white
+}
+
+tr.groupSelected .external-link {
+    display: inline-block;
+}
+
 #showMoreSpeciesButton {
     min-width: 60%;
 }
