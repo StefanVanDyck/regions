@@ -17,7 +17,8 @@
                        target="_blank"
                        class="external-link"
                        rel="noopener noreferrer"
-                       title="Open conservation list details">
+                       title="Open conservation list details"
+                       onclick="event.stopPropagation();">
                         <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                 </td>
