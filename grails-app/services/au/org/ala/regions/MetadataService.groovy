@@ -231,7 +231,7 @@ class MetadataService {
     }
 
     def getSpeciesLists() {
-        String url = "${SPECIES_LIST_URL}/ws/speciesList?isAuthoritative=eq:true&max=1000"
+        String url = "${SPECIES_LIST_URL}/ws/speciesList?isRegionsApproved=eq:true&max=1000"
         def speciesLists = getJSON(url)
 
         speciesLists.lists.collect { item ->
