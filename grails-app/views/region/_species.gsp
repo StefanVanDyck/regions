@@ -30,12 +30,12 @@
             <tr class="infoRowLinks" style="display: none;">
                 <td>&nbsp;</td>
                 <td colspan="2">
-                    <a href="${speciesPageUrl}/${singleSpecies.guid}" class="btn btn-default btn-xs"
+                                        <a href="${speciesPageUrl}/${singleSpecies.guid}" target="_blank" rel="noopener noreferrer" class="btn btn-default btn-xs"
                        title="${g.message(code:'species.profile.alt')}" class="regionsSpeciesPageLink"><i class="fa fa-share-square-o"></i>
                         <g:message code="species.profile" />
                     </a>
                     <a href="${rg.speciesRecordListUrl([guid: singleSpecies.guid, regionFid: regionFid, regionName: regionName, regionType: regionType, regionPid: regionPid, from: from, to: to, showHubData: showHubData])}"
-                       class="btn btn-default btn-xs" title="${g.message(code:'list.records.alt')}"><i
+                       target="_blank" rel="noopener noreferrer" class="btn btn-default btn-xs" title="${g.message(code:'list.records.alt')}"><i
                             class="fa fa-database"></i>
                         <g:message code="list.records" />
                     </a>
