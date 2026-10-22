@@ -86,6 +86,11 @@ class RegionsController {
             region.bbox = metadataService.lookupBoundingBox(region.type, region.name)
         }
 
+        if (!region.bbox) {
+            log.warn "No bounding box for region ${region.name} (pid=${region.pid}); using configured map bounds."
+            region.bbox = metadataService.getDefaultBoundingBox()
+        }
+
         def emblemGuids = [:]
         def subRegions = [:]
         region.gid = 0  // in case none other specified
