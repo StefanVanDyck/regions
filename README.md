@@ -8,3 +8,6 @@ It uses services from:
 * Biocache (https://biocache-ws.ala.org.au/ws)
 * Layers services (https://spatial.ala.org.au/ws)
 
+If a region's spatial metadata has no bounding box, Regions logs a warning and
+uses the configured `map.minLat`, `map.minLng`, `map.maxLat` and `map.maxLng` values
+for the initial map view. The region filter still determines the species and records.

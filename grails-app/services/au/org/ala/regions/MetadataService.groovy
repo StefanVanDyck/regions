@@ -567,15 +567,20 @@ class MetadataService {
     Map lookupBoundingBox(regionType, regionName) {
         def bbox = regionMetadata(regionType, regionName)?.bbox
         if (bbox) {
-            return
+            return bbox
         } else {
-            return [
-                    minLat: grailsApplication.config.getProperty('map.minLat'),
-                    minLng: grailsApplication.config.getProperty('map.minLng'),
-                    maxLat: grailsApplication.config.getProperty('map.maxLat'),
-                    maxLng: grailsApplication.config.getProperty('map.maxLng')
-            ]
+            log.warn "No bounding box for region ${regionName} (type=${regionType}); using configured map bounds."
+            return getDefaultBoundingBox()
         }
+    }
+
+    Map getDefaultBoundingBox() {
+        [
+                minLat: grailsApplication.config.getProperty('map.minLat'),
+                minLng: grailsApplication.config.getProperty('map.minLng'),
+                maxLat: grailsApplication.config.getProperty('map.maxLat'),
+                maxLng: grailsApplication.config.getProperty('map.maxLng')
+        ]
     }
 
     /**
